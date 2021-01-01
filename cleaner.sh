@@ -8,7 +8,7 @@ function walker(){
     if [[ ! -d $file ]]; then
         echo $file
         suffix=`echo "${file##*.}"`
-        if [[ $suffix == 'o' || $suffix == 'out' || $suffix == 'exe' ]]; then
+        if [[ $suffix == 'o' || $suffix == 'out' || $suffix == 'exe' || $suffix == 'txt' ]]; then
             echo "Are you sure running: rm ${file} (y/n)?"
             read yes
             if [[ $yes == 'y' ]]; then
