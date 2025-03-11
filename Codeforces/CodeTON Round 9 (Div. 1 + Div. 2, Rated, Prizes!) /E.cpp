@@ -9,25 +9,23 @@ int T;
 int f[N];
 
 int main() {
-      f[4] = 2;
+      f[3] = 1; // 001 | 010 * 2
+      f[4] = 3; // 0010 * 3, 0110 * 4 , 1010 * 4
+      int presum = 2 + 11;
       for (int i = 5; i < N; i++) {
-            f[i] = (long long) (i - 1) * f[i - 1] % MOD;
+            f[i] = (presum + 1) % MOD;
+            presum = (presum + (long long)i * f[i] % MOD - 1 + MOD) % MOD;
       }
 
       cin >> T;
+
       while (T--) {
             cin >> n;
-            if (n == 2) {
-                  cout << 1 << endl;
-            } else if (n == 3) {
-                  cout << 2 << endl;
-            } else {
-                  int ans = (n - 1) + (n - 2);
-                  for (int i = 3; i < n; i++) {
-                        ans = (ans + f[i]) % MOD;
-                  }
-                  cout << ans << endl;
+            int ans = 1;
+            for (int i = 3; i <= n; i++) {
+                  ans = (ans + f[i]) % MOD;
             }
+            cout << ans << endl;
       }
 }
 // 0, 1, 2, 5, 19, 102, 682
