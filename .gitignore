@@ -1,0 +1,14 @@
+# Rust build output
+target/
+
+# CMake / CLion build output
+cmake-build-*/
+
+# Compiled binaries
+a.out
+*.out
+*.exe
+*.o
+
+# Local test input
+*.in

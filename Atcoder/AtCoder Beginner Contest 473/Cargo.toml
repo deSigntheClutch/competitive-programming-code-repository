@@ -1,0 +1,23 @@
+[package]
+name = "abc473"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+proconio = "0.6.0"
+
+[[bin]]
+name = "A"
+path = "src/A.rs"
+
+[[bin]]
+name = "B"
+path = "src/B.rs"
+
+[[bin]]
+name = "C"
+path = "src/C.rs"
+
+[[bin]]
+name = "D"
+path = "src/D.rs"
